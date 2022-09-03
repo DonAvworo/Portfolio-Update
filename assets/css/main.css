@@ -46,9 +46,10 @@
 }
 
 body{
-    background: var(--color-secondary);
+    background: white;
     display: flexbox; 
-    /* padding: .1rem; */ 
-   
+    /* padding: .5rem;  */ 
 }
+
+
 
