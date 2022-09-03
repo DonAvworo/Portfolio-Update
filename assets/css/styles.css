@@ -1,0 +1,395 @@
+/* =====================NAVIGATION STYLING START=================== */
+nav {
+    display: relative;
+    background: var(--primary-bg-color);  
+    height: 80px; /*TODO COMMENT OUT IF NECCESARY*/
+    width: 100%;
+    z-index: 100;
+    /* position: fixed; */
+    top: 0;
+    position: fixed;
+}
+
+.logo-wrapper {
+    position: relative;
+    line-height: 80px;
+    padding: 0 50px;
+    align-items: center;
+    width: 100%;
+    left: 1rem;
+    top: 1.2rem; /* this will push the wrapper down to centralise the image in the nav bar*/
+    
+}
+
+/*__________________________
+icon btn to populate the nav
+bar when the screen is small
+____________________________*/
+.small-screen-icons {
+    display: none; /* this will hide the icons on bigscreens */
+    position: absolute;
+    top: 0;
+    line-height: 80px;
+    right: 80px;
+    border: 20px;
+    justify-content: center;
+  
+}
+
+.small-screen-icons .btn-nav {
+    max-width: 100px;
+    height: 28px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.logo-wrapper .logo-image {
+    line-height: 80px;
+    background: white;
+    cursor: pointer;
+    border: 1px solid var(--color-secondary);
+    border-radius: 50%;
+}
+
+/* pseudo effect for the logo-image, icons and buttons  */
+.logo-wrapper .logo-image:hover,
+.checkbox-btn:hover,
+.nav-icon-wrapper:hover,
+.small-screen-icons .btn-nav:hover{
+    opacity: .5;
+}
+
+/* the nav ul will be used to create the Navigation Menu, when screen size becomes smaller */
+/* ver2.0 changes. the nav ul comment out because it is preventing the flow of the grid columns */
+nav ul {
+    float: right;
+    margin-right: 40px; 
+    
+}
+
+nav ul li {
+    display: inline-block; /*makes th ul list of items to be displayed in a row */
+    line-height: 80px; 
+    margin: 0 5px;  
+    max-width: 100px; /* this will limit the width of the nav ul list items */
+}
+
+nav ul li:hover {
+    opacity: .5;
+}
+
+nav ul li a {
+    color: var(--color-secondary);
+    color: var(--color-secondary);
+    font-size: 17px;
+    right: 40px; /* this will push the links to the left away from the icons */   
+
+}
+
+/* this buttton only appears when the screen size is smaller than 768px it is the menu button*/
+.checkbox-btn {
+    font-size: 2rem;
+    color: var(--color-secondary);
+    cursor: pointer;
+    margin-right: 40px;
+    float: right;
+    line-height: 84px;
+    display: none; /* the search/menu or checkbox icon is set to this difault and will appear the 
+                    when the screen is smaller than the breakpoint  
+                    this is to avoid the icon being displayed on the nav bar on larger  screen */
+                    
+}
+
+/* hide the checkbox from the navbar */
+#checkbox{ /*<!-- the id checkbox is used to activate the menu icon,
+    which will then populate the screen. this  function will be done in js or css -->*/
+display: none;  
+}
+
+/* styling for close button */
+.nav-icon-wrapper .close-icon-btn  {
+    font-size: 2rem;
+    color: var(--color-secondary);
+    cursor: pointer;
+    position: absolute;
+    margin-right: 40px;  /* this will move the icon 40px left to the search icon */
+    right: 40px; 
+    top: 0;
+    line-height: 80px;
+    display: none;/* the close icon is set to this difault and will appear when the menu button 
+                    is clicked. this action will hide the menu  button and the close button  will
+                     be used asa reverse action. CAN BE DONE IN CSS  OR JS*/
+}
+
+/* styling for search button */
+.nav-icon-wrapper .search-icon-btn {
+    font-size: 2rem;
+    color: var(--color-secondary);
+    cursor: pointer;
+    position: absolute;
+    right: 40px; 
+    top: 0;
+    line-height: 80px;
+}
+
+
+/*========================= STYLING THE TEXT =======================*/
+/*-------------------------------------------------------------------
+
+--------------------------------------------------------------------*/
+/* styling the text in the banner */
+.banner-text .text{
+    position: absolute;
+    color: var(--color-secondary);
+    font-weight: bold;
+    text-align: center;
+    top: 36%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Sacramento', cursive;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 2px var(--color-tertiary);
+    --webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    padding: 5px;
+    border-radius: 5px;
+    border: 5px;
+}
+
+.banner-text p {
+    position: absolute;
+    color: var(--color-secondary);
+    text-align: center;
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Meriweather';
+    font-size: 1.2rem;
+    text-shadow: 0px 0px 0px var(--color-tertiary);
+    padding: 5px;
+    border-radius: 5px;
+    border: 5px;
+}
+
+.Pro {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+}
+
+
+
+/* ==================== END OF NAVIGATION STYLING ================== */
+
+/* ======================= Responsive Styling =======================
+_____________________________________________________________________
+
+this function will call the menu when the screen size  changes from 
+desktop view to smaller devices viewport. as the sizes gets smaller, 
+the padding of the logo image will push the ul out of line and into 
+the main body area then the nav ul list will shown)
+_____________________________________________________________________*/
+
+@media screen and (max-width: 736px) {
+    /*______________________________________
+    this controls the nave menu slide effect
+    ________________________________________*/
+    ul {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        background: var(--transparent-bg-color-dark-dark);
+        width: 100%;
+        height: 100%;
+        z-index: 20;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        left : -100%; /* this will push the ul to the left completely out of the page */
+        transition: all .8s ease-in-out;  /* this will make the menu slide in and out (this affects the code in line 122)*/
+    }
+    
+    /*__________________________
+    display the nav ul list items
+    ____________________________*/
+    .small-screen-icons {
+        display: block;
+    }
+
+    /* here,  changes in positiong and  style of the ul list items is made */
+    nav ul li {
+        display: block;
+        margin: 0 auto;
+    }
+
+    nav ul li a {
+        display: block;
+        text-align: center;
+    }
+
+    /* nav ul transition and transformation */
+    nav ul {
+        transition: all .8s ease-in-out;
+        transform: translateX(0);
+    }
+
+    /* this will make the menu appear when the screen size is smaller than 768px */
+    #checkbox:checked ~ ul { /*<!-- this will show the menu when the checkbox is checked,  -->*/ 
+        left: 0;
+    }
+
+    .checkbox-btn {
+        display: block;
+    }
+
+    .search-icon-btn {
+        right: 40px;
+        margin-right: 40px; /*this will push the search icon to the left away from the menu icon */ 
+    }
+
+    .banner-text p{
+        font-size: 1rem;
+        letter-spacing: .1px;
+
+    }
+    .banner-text .text {
+        font-size: 1.7rem;
+        letter-spacing: .1px;
+
+    }
+    
+}
+
+/* keep nav at the top of the page */
+@media screen and (max-width: 267px) { 
+    nav {
+        position: fixed;
+        top: 0;
+    }
+}
+
+/* ==================== END OF NAVIGATION STYLING ================== */
+
+
+
+/*======================== START OF GRID LAYOUT ====================*
+____________________________________________________________________
+Grid Layout for the main body area of the page and styling of the 
+sections of the site
+____________________________________________________________________*/
+.main-wrapper > div{ 
+    background: rgb(241, 143, 143);
+    padding: 1.5rem;
+}
+
+.main-wrapper > div:nth-child(odd){
+    background: rgb(129, 77, 77);
+    padding: 1rem;
+}
+
+/* ______________________________________________ 
+here, the column represents the width of the grid
+and the row represents the height of the grid
+_________________________________________________*/
+.main-wrapper{
+    display: grid;
+    grid-gap: 1rem;
+    /* grid-template-columns: 70% 30%; */
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(12, .25fr); 
+}  
+
+.banner {
+    background-color: antiquewhite;
+    display: grid;
+    grid-column: 1/4;
+    /* grid-column: 1 / span 4; */ 
+    grid-row: 1/4;
+    /* grid-row: 1/3xs; */ /*  use for mediia query*/
+    background: url(../image/Photoleap-3.png) no-repeat center center;
+    background-size: cover;
+    background-position: center; 
+    border: 10px;
+    background-size: cover;
+    padding: .2rem;
+    margin-top: 82px; /* this will push the banner down from the nav bar */
+    object-position: 50% 50%; /* this will center the banner when scaled */
+}
+ 
+.home  {
+    background-color: rgb(99, 78, 51);
+    display: grid;
+    grid-column: 1/3;
+    grid-row: 4/7;
+    background: url(../image/Photoleap-6.png) no-repeat center center;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 0 10px rgba(0,0,0,1); 
+    object-position: 50% 50%;
+}
+
+.about {
+    /* background-color: rgb(236, 197, 145); */
+    display: grid;
+    background: url(https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80); 
+    box-shadow: 0 0 10px rgba(0,0,0,1);  
+    grid-column: 3/4;
+    grid-row: 4/7;
+}
+
+.hobbies{
+    /* background-color: rgb(236, 197, 145); */
+    display: grid;
+    background: url(https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+    box-shadow: 0 0 10px rgba(0,0,0,1); 
+    grid-column: 1/2;grid-column: 1/2; 
+}
+
+.skills {
+    /* background-color: rgb(236, 197, 145); */
+    display: grid;
+    background: url(https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+    box-shadow: 0 0 10px rgba(0,0,0,1);  
+    grid-column: 1/2; 
+}
+
+.portfolio {
+    /* background-color: rgb(236, 197, 145); */
+    display: grid;
+    /* margin: 0.1rem; */
+    box-shadow: 0 0 10px rgba(0,0,0,1);  
+    background: url(https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+    grid-column: 2/4;
+    grid-row: 7/9;
+
+}
+
+.hire-me{
+    /* background-color: rgb(236, 197, 145); */
+    display: grid;
+    box-shadow: 0 0 10px rgba(0,0,0,1); 
+    background: url(../image/Photoleap-5.png) no-repeat center center; 
+    background-size: cover;
+    grid-column: 1/4; 
+    grid-row: 9/12;
+}; 
+
+.footer-wrapper{
+    display: grid;
+    grid-column: 1/4; 
+    grid-row: 8/10;; 
+    /* margin: 0.1rem; */
+    box-shadow: 0 0 10px rgba(0,0,0,1);  
+};
+/* ======================= END OF GRID LAYOUT ======================*/
+
+
+/* =================== RESPONSIVE VIEWPORT STYLING ==================
+_____________________________________________________________________
+Changes in the grid layout will be made here when the screen size 
+changes from desktop view to smaller devices viewport.
+_____________________________________________________________________*/
+    /* TODO */
+
+/* ======================== END OF GRID LAYOUT ===================== */
+

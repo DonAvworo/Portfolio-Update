@@ -1,0 +1,54 @@
+/* import font api */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital@1&family=Montserrat&family=Sacramento&display=swap');
+
+/* create variables for the css doc */
+:root {
+    --gradient-primary: linear-gradient(to right, #f6d365 0%, #fda085 100%);
+    --gradient-secondary: linear-gradient(to right, #65f6d9 0%, #d9a495 100%);
+    --primary-bg-color: #19191b;
+    --secondary-bg-color: #232121ea;
+    --tertiary-bg-color: #383232;
+    --transparent-bg-color-dark-dark: rgba(0, 0, 0, 0.75);
+    --transparent-bg-color-dark: rgba(0, 0, 0, 0.45);
+    --transparent-bg-color-light: rgba(0, 0, 0, 0.5);
+    --color-primary: #00bcd4;
+    --color-secondary: #fafafa;
+    --color-tertiary: #9ac9f0;
+    --font-primary: 'Roboto', sans-serif;
+    --font-secondary: 'Merriweather', sans-serif;
+    --font-tertiary: 'Monserrat', sans-serif;
+    --hover-light-color: #ff3434;
+    --shadow: 0px 1px 5px rgba(104, 104, 104, 0.8);
+    --shadow-dark: 0px 1px 5px rgba(0, 0, 0, 0.8);
+    --font-size-secondary: 1.6rem; 
+    --font-size-tertiary: 2.4rem; 
+    --font-size-quaternary: 3.2rem; 
+    --font-size-quinary: 4.2rem; 
+    --font-size-senary: 5.2rem; 
+    --gap: 1.5rem; 
+    --gap-double: 3rem; 
+    --gap-2: 2rem; 
+    --gap-2-double: 4rem; 
+    --margin-small: 2rem; 
+    --margin-medium: 3rem;
+    --item-height-small: 20rem; 
+    --item-height-medium: 30rem; 
+    --item-height-large: 40rem; 
+}  
+
+/* universal styling */
+* {
+    box-sizing: border-box;
+    margin: 0; /* this will remove the margin from the body */
+    padding: 0%; /* this will remove the padding from the body */
+    list-style: none; /* this will remove the list-style from the body */
+    text-decoration: none;  /* this will remove the text-decoration from the body */    
+}
+
+body{
+    background: var(--color-secondary);
+    display: flexbox; 
+    /* padding: .1rem; */ 
+   
+}
+
