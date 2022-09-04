@@ -267,27 +267,31 @@ _____________________________________________________________________*/
         position: fixed;
         top: 0;
     }
+
+    .banner{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .banner-text p{
+        font-size: .8rem;
+        letter-spacing: .1px;
+
+    }
+    .banner-text .text {
+        font-size: 1.5rem;
+        letter-spacing: .1px;
+
+    }
 }
+
 
 /* ==================== END OF NAVIGATION STYLING ================== */
 
 
 
 /*======================== START OF GRID LAYOUT ====================*
-____________________________________________________________________
-Grid Layout for the main body area of the page and styling of the 
-sections of the site
-____________________________________________________________________*/
-/* .main-wrapper > div{ 
-    background: rgb(241, 143, 143);
-    padding: 1.5rem;
-}
-
-.main-wrapper > div:nth-child(odd){
-    background: rgb(129, 77, 77);
-    padding: 1rem;
-} */
-
 /* ______________________________________________ 
 here, the column represents the width of the grid
 and the row represents the height of the grid
@@ -299,6 +303,7 @@ _________________________________________________*/
     /* grid-template-columns: 70% 30%; */
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(24, .25fr); 
+    height: 100%;
 }  
 
 .banner {
@@ -382,4 +387,3 @@ _________________________________________________*/
     grid-row: 9/14;
 }
     
-
