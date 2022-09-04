@@ -13,7 +13,7 @@
 
     I have also added a button to the Hire-Me page. This button will take you to my resume. The resume is in PDF
     format. If you do not have Adobe Acrobat Reader, you can download it for free at www.adobe.com. The PDF file 
-    is stores in the image folder inside the assets folder.
+    is stored in the image folder inside the assets folder.
 
 
     Noticable bugs:
