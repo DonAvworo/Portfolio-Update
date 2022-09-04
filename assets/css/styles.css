@@ -295,7 +295,7 @@ _________________________________________________*/
 .main-wrapper{ 
     position: relative;
     display: grid;
-    grid-gap: 1rem;
+    grid-gap: .5rem;
     /* grid-template-columns: 70% 30%; */
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(24, .25fr); 
@@ -324,7 +324,6 @@ _________________________________________________*/
     grid-column: 1/4;
     grid-row: 4/7;
     background: var(--transparent-bg-color-dark);
-    padding: 1rem;
     border-radius: 5px;
     margin: 1rem;
     background: url(../image/Photoleap-6.png) no-repeat center center;
@@ -333,7 +332,7 @@ _________________________________________________*/
     /* border: 10px; */
 }
 
-.container {
+.container {       /* this is the global class for the section containers*/
     padding: 1rem;
     border-radius: 5px;
     margin: .5rem 1rem .5rem 1rem;
@@ -341,3 +340,46 @@ _________________________________________________*/
     background: off rgb(231, 216, 216);
     
 }
+
+.about {
+    position: relative;
+    display: grid;
+    grid-column: 1/2;
+    grid-row: 7/8;
+}
+
+.hobbies{
+    position: relative;
+    display: grid;
+    grid-column: 2/3;
+    grid-row: 7/8;
+}
+
+.skills {
+   
+    display: grid;
+    grid-column: 3/4;
+    grid-row: 7/9;
+}
+
+.skills ul {
+    position: relative;
+}
+
+.skills ul li {
+    position: relative;
+    display: inline-block;
+    /* margin: 0 1rem 0 1rem;
+    padding: 0 1rem 0 1rem;
+    border-radius: 5px; */
+    
+}
+
+.footer-wrapper {
+    position: relative;
+    display: grid;
+    grid-column: 1/4;
+    grid-row: 9/14;
+}
+    
+
